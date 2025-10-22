@@ -30,6 +30,14 @@ class BankAccount
 	{
 		System.out.println("current balance"+balance);
 	}
+	public static void printMenu() {
+    System.out.println("Enter your choice:");
+    System.out.println("1. Balance");
+    System.out.println("2. Deposit");
+    System.out.println("3. Withdraw");
+    System.out.println("4. Interest");
+    System.out.println("0. Exit");
+}
 }
 class Saveaccount extends BankAccount
 {
@@ -53,23 +61,13 @@ public class TestAccount
 		double n = 4000000;
 		Saveaccount save = new Saveaccount(n);
 		Boolean running = true;
-		System.out.println("enter your choice");
-		System.out.println("1. balance");
-		System.out.println("2. deposit");
-		System.out.println("3.withdraw");
-		System.out.println("4. intrest");
-		System.out.println("0. exit");
-		while(running){
-		int choice = scan.nextInt();
-		System.out.println("enter your choice");
-		System.out.println("1. balance");
-		System.out.println("2. deposit");
-		System.out.println("3.withdraw");
-		System.out.println("4. intrest");
-		System.out.println("0. exit");
-		switch(choice)
+		while(running)
 		{
-			case 1:
+			int choice = scan.nextInt();
+			BankAccount.printMenu();
+			switch(choice)
+			{
+				case 1:
 			{
 				save.currentbalance();
 				break;
@@ -105,7 +103,8 @@ public class TestAccount
 			System.out.println("invalid option");
 	
 		}
-				}
+		}
+				
 		scan.close();
 		
 
